@@ -10,10 +10,9 @@
 
 #define BASE 0
 #define NAV 1
-#define MODS 2
-#define SYMBOLS 3
-#define NUMBERS 4
-#define SPECIAL 5
+#define SYMBOLS 2
+#define NUM 3
+#define FUN 4
 
 #define LAUNCHER (LG(SPACE))
 #define CTRL_TAB (LC(TAB))
@@ -42,19 +41,54 @@
       label = "VBATT";
   };
 
-  conditional_layers {
-      compatible = "zmk,conditional-layers";
-  };
+  behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
 
   keymap {
     compatible = "zmk,keymap";
 
     default_layer {
       bindings = <
-      &kp Q &kp Q     &kp W    &kp E     &kp R     &kp T                     &kp Y     &kp U    &kp I     &kp O     &kp P         &kp Q
-      &kp Q &kp A     &kp S    &kp D     &kp F     &kp G                     &kp H     &kp J    &kp K     &kp L     &kp SEMI      &kp Q
-      &kp Q &kp Z     &kp X    &kp C     &kp V     &kp B                     &kp N     &kp M    &kp COMMA &kp QMARK &kp Q         &kp Q 
-                                &kp Q &kp SPACE &kp TAB                   &kp ENTER &kp BKSP &kp Q
+      &kp Q   &kp Q      &kp W      &kp F       &kp P        &kp B                     &kp J      &kp L       &kp U      &kp Y      &kp SEMI   &kp Q
+      &kp Q   &hm LGUI A &hm LALT R &hm LSFT S  &kp LCTRL T  &hm RALT G                &hm RALT M &hm RCTRL N &hm RSFT E &hm LALT I &hm RGUI O &kp Q
+      &kp Q   &kp Z      &kp X      &kp C       &kp D        &kp V                     &kp K      &kp H       &kp COMMA  &kp DOT    &kp QMARK  &kp Q 
+                                    &lt NUM TAB &lt NAV BSPC &lt FUN DEL               &kp ENTER  &kp SPACE   &kp Q
+      >;
+    };
+
+    nav_layer {
+      bindings = <
+      &none   &none      &none      &none       &none        &none                     &none      &none       &none      &none      &none      &none
+      &none   &sk LGUI   &sk LALT   &sk LSFT    &sk LCTRL    &sk RALT                  &kp LEFT   &kp DOWN    &kp UP     &kp RIGHT  &none      &none
+      &none   &none      &none      &none       &none        &none                     &none      &none       &none      &none      &none      &none 
+                                    &trans      &trans       &trans                    &trans     &trans      $trans
+      >;
+    };
+
+    symbols_layer {
+      bindings = <
+      &none   &kp APOS   &kp LT     &kp GT      &kp AT       &kp DOT                   &kp AMPS     &kp UNDER &kp LBRC &kp RBRC &kp PRCNT &kp none
+      &none   &kp EXCL   &kp MINUS  &kp PLUS    &kp EQUAL    &kp HASH                  &kp PIPE     &kp COLON &kp LPAR &kp RPAR &kp SEMI  &kp none
+      &none   &kp CARET  &kp FSLH   &kp STAR    &kp BSLH     &kp AT                    &kp TILED    &kp DLLR  &kp LBKT &kp RBKT &kp QMARK &kp none
+                                    &trans      &trans       &trans                    &trans       &trans    &trans
+      >;
+    };
+
+    fun_layer {
+      bindings = <
+      &none   &none      &none      &none       &none        &none                     &none      &none       &none      &none      &none      &none
+      &none   &sk LGUI   &sk LALT   &sk LSFT    &sk LCTRL    &sk RALT                  &kp LEFT   &kp DOWN    &kp UP     &kp RIGHT  &none      &none
+      &none   &none      &none      &none       &none        &none                     &none      &none       &none      &none      &none      &none 
+                                    &trans      &trans       &trans                    &trans     &trans      $trans
       >;
     };
   };
