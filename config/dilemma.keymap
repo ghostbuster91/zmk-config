@@ -51,7 +51,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-    };
+  };
 
   keymap {
     compatible = "zmk,keymap";
@@ -76,9 +76,9 @@
 
     symbols_layer {
       bindings = <
-      &none   &kp APOS   &kp LT     &kp GT      &kp AT       &kp DOT                   &kp AMPS     &kp UNDER &kp LBRC &kp RBRC &kp PRCNT &kp none
-      &none   &kp EXCL   &kp MINUS  &kp PLUS    &kp EQUAL    &kp HASH                  &kp PIPE     &kp COLON &kp LPAR &kp RPAR &kp SEMI  &kp none
-      &none   &kp CARET  &kp FSLH   &kp STAR    &kp BSLH     &kp AT                    &kp TILED    &kp DLLR  &kp LBKT &kp RBKT &kp QMARK &kp none
+      &none   &kp APOS   &kp LT     &kp GT      &kp AT       &kp DOT                   &kp AMPS     &kp UNDER &kp LBRC   &kp RBRC   &kp PRCNT  &none
+      &none   &kp EXCL   &kp MINUS  &kp PLUS    &kp EQUAL    &kp HASH                  &kp PIPE     &kp COLON &kp LPAR   &kp RPAR   &kp SEMI   &none
+      &none   &kp CARET  &kp FSLH   &kp STAR    &kp BSLH     &kp AT                    &kp TILED    &kp DLLR  &kp LBKT   &kp RBKT   &kp QMARK  &none
                                     &trans      &trans       &trans                    &trans       &trans    &trans
       >;
     };
