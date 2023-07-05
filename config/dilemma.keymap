@@ -56,14 +56,14 @@
       &kp Q   &kp Q      &kp W      &kp F        &kp P        &kp B                     &kp J      &kp L       &kp U       &kp Y      &kp SEMI   &kp Q
       &kp Q   &hm LGUI A &hm LALT R &hm LSHFT S  &hm LCTRL T  &hm RALT G                &hm RALT M &hm RCTRL N &hm RSHFT E &hm LALT I &hm RGUI O &kp Q
       &kp Q   &kp Z      &kp X      &kp C        &kp D        &kp V                     &kp K      &kp H       &kp COMMA   &kp DOT    &kp QMARK  &kp Q 
-                                    &kp TAB      &lt NAV BSPC &kp DEL                   &kp ENTER  &kp SPACE   &kp Q
+                                    &kp TAB      &kp BSPC     &kp DEL                   &kp ENTER  &kp SPACE   &kp Q
       >;
     };
 
     nav_layer {
       bindings = <
       &none   &none      &none      &none        &none        &none                     &none      &none       &none      &none      &none      &none
-      &none   &sk LGUI   &sk LALT   &sk LSHFT    &sk LCTRL    &sk RALT                  &kp LEFT   &kp DOWN    &kp UP     &kp RIGHT  &none      &none
+      &none   &none      &none      &none        &none        &none                     &none      &none       &none      &none      &none      &none
       &none   &none      &none      &none        &none        &none                     &none      &none       &none      &none      &none      &none 
                                     &trans       &trans       &trans                    &trans     &trans      $trans
       >;
