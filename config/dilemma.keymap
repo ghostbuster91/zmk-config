@@ -29,7 +29,6 @@
 
   chosen {
     zmk,battery = &vbatt;
-    zephyr,display = &oled;
   };
 
   vbatt: vbatt {
