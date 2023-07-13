@@ -6,6 +6,10 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
+nice_view_spi: &spi0 {
+    cs-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>;
+};
+
 / {
     chosen {
         zmk,kscan = &kscan0;
