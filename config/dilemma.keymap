@@ -14,17 +14,6 @@
 #define NUM 3
 #define FN 4
 
-#define LAUNCHER (LG(SPACE))
-#define CTRL_TAB (LC(TAB))
-#define C_S_TAB (LC(LS(TAB)))
-#define ELLIPSIS (LA(SEMICOLON))
-
-#define SPC_PREVIOUS (LC(LA(LEFT)))
-#define S_PRV SPC_PREVIOUS
-
-#define SPC_NEXT (LC(LA(RIGHT)))
-#define S_NXT SPC_NEXT
-
 #define STAB (LS(TAB))
 #define CTAB (LC(TAB))
 #define CSTAB (LC(LS(TAB)))
@@ -41,6 +30,13 @@
   };
 
   behaviors {
+        swap: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <24>;
+        };
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -58,8 +54,8 @@
     default_layer {
       bindings = <
       &none     &kp Q      &kp W      &kp F        &kp P        &kp B                     &kp J      &kp L       &kp U       &kp Y      &kp SEMI   &none
-      &kp Q     &hm LGUI A &hm LALT R &hm LSHFT S  &hm LCTRL T  &hm RALT G                &hm RALT M &hm RCTRL N &hm RSHFT E &hm LALT I &hm RGUI O &kp APOS
-      &kp Q     &kp Z      &kp X      &kp C        &kp D        &kp V                     &kp K      &kp H       &kp COMMA   &kp DOT    &kp QMARK  &none
+      &kp ESC   &hm LGUI A &hm LALT R &hm LSHFT S  &hm LCTRL T  &hm RALT G                &hm RALT M &hm RCTRL N &hm RSHFT E &hm LALT I &hm RGUI O &kp APOS
+      &none     &kp Z      &kp X      &kp C        &kp D        &kp V                     &kp K      &kp H       &kp COMMA   &kp DOT    &kp QMARK  &none
                                       &lt NUM TAB  &lt NAV BSPC &lt FN DEL                &kp ENTER  &lt SYM SPACE &kp Q
       >;
     };
@@ -67,8 +63,8 @@
     nav_layer {
       bindings = <
       &trans    &trans     &trans     &trans       &trans       &trans                    &trans     &trans      &kp HOME    &kp END    &trans     &none
-      &none     &sk LGUI   &sk LALT   &sk LSHFT    &sk LCTRL    &sk RALT                  &kp RIGHT  &kp DOWN    &kp UP      &kp LEFT   &trans     &none
-      &none     &trans     &trans     &trans       &trans       &kp PSCRN                 &trans     &trans      &trans      &trans     &trans     &none 
+      &swap     &sk LGUI   &sk LALT   &sk LSHFT    &sk LCTRL    &sk RALT                  &kp RIGHT  &kp DOWN    &kp UP      &kp LEFT   &trans     &none
+      &kp STAB  &trans     &trans     &trans       &trans       &kp PSCRN                 &trans     &trans      &trans      &trans     &trans     &none 
                                       &trans       &trans       &trans                    &trans     &trans      &trans  
       >;
     };
