@@ -18,7 +18,7 @@
 #define CTAB (LC(TAB))
 #define CSTAB (LC(LS(TAB)))
 
-&mt {
+&lt {
   quick-tap-ms = <125>;
 };
 
