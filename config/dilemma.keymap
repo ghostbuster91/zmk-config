@@ -18,6 +18,10 @@
 #define CTAB (LC(TAB))
 #define CSTAB (LC(LS(TAB)))
 
+&mt {
+  quick-tap-ms = <125>;
+};
+
 / {
 
   chosen {
@@ -63,7 +67,7 @@
     nav_layer {
       bindings = <
       &trans    &trans     &trans     &trans       &trans       &trans                    &trans     &trans      &kp HOME    &kp END    &trans     &none
-      &swap     &sk LGUI   &sk LALT   &sk LSHFT    &sk LCTRL    &sk RALT                  &kp RIGHT  &kp DOWN    &kp UP      &kp LEFT   &trans     &none
+      &swap     &sk LGUI   &sk LALT   &sk LSHFT    &sk LCTRL    &sk RALT                  &kp RIGHT  &kp DOWN    &kp UP      &kp LEFT   &trans     &kp F11
       &kp STAB  &trans     &trans     &trans       &trans       &kp PSCRN                 &trans     &trans      &trans      &trans     &trans     &none 
                                       &trans       &trans       &trans                    &trans     &trans      &trans  
       >;
